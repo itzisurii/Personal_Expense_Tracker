@@ -1,3 +1,5 @@
+@import "flowbite";
+
 /* General page styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,17 +10,14 @@ body {
     border-radius: 1rem;
 }
 
-/* Button hover effect */
-.btn-success:hover {
-    background-color: #198754;
-    transform: scale(1.05);
+/* Hover effects for buttons (Tailwind handles most, but extra smoothness) */
+button {
     transition: all 0.2s ease-in-out;
 }
 
-/* Table rows hover */
-.table tbody tr:hover {
+/* Table rows hover effect */
+#expense-table tr:hover {
     background-color: #f1f5f9;
-    transition: background 0.3s;
 }
 
 /* Hide/show utility */

@@ -25,13 +25,13 @@ function renderExpenses() {
     expenses.forEach((exp, index) => {
         total += exp.amount;
         const row = `
-      <tr>
-        <td>${exp.date}</td>
-        <td>${exp.category}</td>
-        <td>${exp.description}</td>
-        <td>${exp.amount.toFixed(2)}</td>
-        <td>
-          <button class="btn btn-danger btn-sm" onclick="deleteExpense(${index})">Delete</button>
+      <tr class="hover:bg-gray-100 transition-colors">
+        <td class="px-4 py-2">${exp.date}</td>
+        <td class="px-4 py-2">${exp.category}</td>
+        <td class="px-4 py-2">${exp.description}</td>
+        <td class="px-4 py-2">${exp.amount.toFixed(2)}</td>
+        <td class="px-4 py-2">
+          <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition" onclick="deleteExpense(${index})">Delete</button>
         </td>
       </tr>
     `;
@@ -78,5 +78,8 @@ renderExpenses();
 // Initialize flatpickr calendar
 flatpickr("#date", {
     dateFormat: "Y-m-d",
-    defaultDate: "today"
+    defaultDate: "today",
+    allowInput: true // optional: lets user type manually if they want
 });
+
+
